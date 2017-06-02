@@ -1,2 +1,3 @@
-# chartjs
+# chart.js
 Chart.js full series
+---
