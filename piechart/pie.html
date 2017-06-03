@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>pie chart | chart.js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <style media="screen">
+      .my-container{
+        position: relative;
+        width: 500px;
+        height: 500px;
+        margin: auto;
+        margin-top: 100px;
+      }
+      canvas{
+        border: 2px dotted red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="my-container">
+      <canvas id="myChart" ></canvas>
+    </div>
+
+    <script type="text/javascript">
+      var data1 = ["34", "45", "87", "39", "97"];
+      var labels = ["spring16", "summer16", "fall16", "spring17", "fall17"];
+
+      /* Data info here*/
+      var data = {
+        labels : labels,
+        datasets : [{
+          data: data1,
+          backgroundColor:["#4A148C","#081b60","#F44336","#0D47A1","#FF6F00"]
+        }]
+      };
+
+      /* OPTIONS HERE */
+
+      var options = {
+        responsive: true,
+        title:{
+          display:true,
+          text:"Nishi IT Institute"
+        }
+      };
+
+      /* Mian part here */
+
+      var ctx = document.getElementById("myChart").getContext('2d');
+      var myChart = new Chart(ctx,{
+        type:'pie',
+        data:data ,
+        options:options
+      })
+    </script>
+  </body>
+</html>
